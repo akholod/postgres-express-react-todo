@@ -8,7 +8,22 @@ Vue.use(Vuex);
 
 export default function createStore() {
   return new Vuex.Store({
-    state: { count: 1 },
+    state: {
+      todos: [
+        {
+          task: 'Code',
+          completed: true,
+        },
+        {
+          task: 'Sleep',
+          completed: false,
+        },
+        {
+          task: 'Eat',
+          completed: false,
+        },
+      ],
+    },
     actions,
     getters,
     mutations,

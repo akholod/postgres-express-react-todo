@@ -1,7 +1,8 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h1>{{ count }}</h1>
+    <ul v-for="(todo, i) in todos" :key="i"> 
+      <li>{{ todo.task }}</li>
+    </ul>   
   </div>
 </template>
 
@@ -9,8 +10,8 @@
 export default {
   name: 'hello',
   computed: {
-    count() {
-      return this.$store.getters.count;
+    todos() {
+      return this.$store.getters.todos;
     },
   },
   data() {
