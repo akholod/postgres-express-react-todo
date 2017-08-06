@@ -15,4 +15,12 @@ export default {
       return t;
     });
   },
+  deleteTodo(state, payload) {
+    const index = state.todos.findIndex(todo => todo.id === payload);
+    state.todos.splice(index, 1);
+  },
+  updateTodo(state, payload) {
+    const todo = state.todos.find(t => t.id === payload.id);
+    todo.task = payload.task;
+  },
 };
