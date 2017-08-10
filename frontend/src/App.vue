@@ -4,8 +4,19 @@
   </div>
 </template>
 <script>
+import axios from 'axios';
+
 export default {
   name: 'app',
+  mounted() {
+    axios.get('http://localhost:3000/api/todos/')
+      .then((response) => {
+        console.log(response); //eslint-disable-line
+      })
+      .catch((error) => {
+        console.log(error);  //eslint-disable-line
+      });
+  },
 };
 </script>
 

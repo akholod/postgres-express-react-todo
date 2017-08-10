@@ -1,6 +1,9 @@
 import uuidv4 from 'uuid/v4';
 
 export default {
+  setTodos(state, payload) {
+    state.todos = payload; // eslint-disable-line no-param-reassign
+  },
   addTodo(state, payload) {
     const task = {
       task: payload,
